@@ -1,0 +1,14 @@
+Given an array of size N-1 such that it only contains distinct integers in the range of 1 to N. Find the missing element.
+
+
+def (arr,n):
+  new = []
+  for i in range(n+1):
+    new.append(i)
+
+  final = new + arr
+  xor_ans = 0
+  for i in range(len(final)):
+    xor_ans = xor_ans^final[i]
+  return xor_ans
+
